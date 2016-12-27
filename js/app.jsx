@@ -35,14 +35,17 @@ var Calc = React.createClass({
       				<div className="header">
         				<h1 className="custom-heading">Welcome to CAP Calculator</h1>
         				<p className="custom-paragraph">This CAP calculator was built to help NUS students to monitor and calculate their CAP.</p>
+        				<i className="custom-note">If you need information on how CAP is calculated, check <a href="http://www.nus.edu.sg/registrar/education-at-nus/modular-system.html">this</a> out!</i> <br/>
+        				<i className="custom-note">If you want to play around with the grades, edit the grades column and click submit again!</i> <br/>
+        				<i className="custom-note">If you need to edit the number of rows, currently you need to refresh the page. Will improve on this soon! </i>
       				</div>
       				<div className="row">
-      					<div className="col-md-6">
+      					<div className="col-xs-6">
       						<h1 className="cap-heading">Enter number of modules</h1>
-      						<input onKeyUp={this.handleOnKeyUp}></input>
+      						<input className="module-input" onKeyUp={this.handleOnKeyUp}></input>
       						<i> (Press enter)</i>
       					</div>
-      					<div className="col-md-4 text-center">
+      					<div className="col-xs-4 text-center">
       						<h1 className="cap-heading">Your CAP</h1>
       						<span className="cap">{this.state.cap}</span>
       					</div>

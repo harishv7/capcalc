@@ -1,12 +1,14 @@
 .custom-heading {
 	font-family: Lato, sans-serif;
 	font-size: 48px;
+	color: cornflowerblue;
 }
 
 .cap-heading {
 	font-family: Lato, sans-serif;
 	font-size: 36px;
 	font-weight: 300;
+	color: cornflowerblue;
 }
 
 .cap {
@@ -16,19 +18,29 @@
 }
 
 p {
-	font-family: Lato, sans-serif;
+	font-family: Lato, "Helvetica Nueue", sans-serif;
 	font-size: 24px;
 	font-weight: 300;
+	color: green;
 }
 
 input {
-	font-family: Lato, sans-serif;
+	font-family: Lato, "Helvetica Nueue", sans-serif;
 	font-size: 24px;
 	margin: 2px;
 	padding: 2px;
-	width: auto;
+	width: 100%;
 	border-width: 1px;
 	border-style: solid;
+}
+
+.module-input {
+	width: 50%;
+}
+
+.custom-note {
+	font-family: Lato, "Helvetica Nueue", sans-serif;
+	font-size: 16px;
 }
 
 .custom-btn {
