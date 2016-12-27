@@ -40,7 +40,7 @@ var Calc = React.createClass({
       					<div className="col-md-6">
       						<h1 className="cap-heading">Enter number of modules</h1>
       						<input onKeyUp={this.handleOnKeyUp}></input>
-      						<i>(Press enter)</i>
+      						<i> (Press enter)</i>
       					</div>
       					<div className="col-md-4 text-center">
       						<h1 className="cap-heading">Your CAP</h1>
