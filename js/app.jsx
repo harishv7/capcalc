@@ -37,6 +37,7 @@ var Calc = React.createClass({
         				<p className="custom-paragraph">This CAP calculator was built to help NUS students to monitor and calculate their CAP.</p>
         				<i className="custom-note">If you need information on how CAP is calculated, check <a href="http://www.nus.edu.sg/registrar/education-at-nus/modular-system.html">this</a> out!</i> <br/>
         				<i className="custom-note">If you want to play around with the grades, edit the grades column and click submit again!</i> <br/>
+						<i className="custom-note">Valid grades: A+, A, A-, B+, B, B-, C+, C, D+, D, F</i> <br/>
         				<i className="custom-note">If you need to edit the number of rows, currently you need to refresh the page. Will improve on this soon! </i>
       				</div>
       				<div className="row">
