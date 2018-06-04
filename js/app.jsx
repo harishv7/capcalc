@@ -35,10 +35,13 @@ var Calc = React.createClass({
       				<div className="header">
         				<h1 className="custom-heading">Welcome to CAP Calculator</h1>
         				<p className="custom-paragraph">This CAP calculator was built to help NUS students to monitor and calculate their CAP.</p>
-        				<i className="custom-note">If you need information on how CAP is calculated, check <a href="http://www.nus.edu.sg/registrar/education-at-nus/modular-system.html">this</a> out!</i> <br/>
-        				<i className="custom-note">If you want to play around with the grades, edit the grades column and click submit again!</i> <br/>
-						<i className="custom-note">Valid grades: A+, A, A-, B+, B, B-, C+, C, D+, D, F</i> <br/>
-        				<i className="custom-note">If you need to edit the number of rows, currently you need to refresh the page. Will improve on this soon! </i>
+						<ul>
+							<li>If you need information on how CAP is calculated, check <a href="http://www.nus.edu.sg/registrar/education-at-nus/modular-system.html">this</a> out!</li>
+							<li>If you want to play around with the grades, edit the grades column and click submit again!</li>
+							<li>Valid grades: A+, A, A-, B+, B, B-, C+, C, D+, D, F </li>
+							<li>If you need to edit the number of rows, simply edit the number and press "Enter". <br/> If there are too many it will remove the last few extra modules. Else, it will add more rows.</li>
+							<li>All the best!</li>
+						</ul>
       				</div>
       				<div className="row">
       					<div className="col-xs-6">
@@ -69,6 +72,13 @@ var Calc = React.createClass({
     				</div>
     			</div>
     			{<ModuleRows numOfModules={this.state.numOfModules} updateCap={this.updateCap} />}
+				<div className="container">
+					<div className="row">
+						<p>Built by <a href="https://harishv.me">Harish V</a></p>
+						
+						<span><a href="mailto:mail@harishv.me">Contact me</a></span>
+					</div>
+				</div>
 			</div>
 		);
 	},
@@ -78,14 +88,29 @@ var Calc = React.createClass({
 			console.log(input);
 
 			// initialise moduleInfo
-			for(var i = 0; i < input; i++) {
-					moduleInfo[i] = {
+			var lenOfModuleInfo = Object.keys(moduleInfo).length;
+
+			if(lenOfModuleInfo > input) {
+				var numOfModulesToDelete = lenOfModuleInfo - input;
+
+				while(numOfModulesToDelete != 0) {
+					delete moduleInfo[lenOfModuleInfo - 1];
+					lenOfModuleInfo -= 1;
+					numOfModulesToDelete -= 1;
+				}
+			} else if(input > lenOfModuleInfo) {
+				var numOfModulesToAdd = input - lenOfModuleInfo;
+
+				while(numOfModulesToAdd != 0) {
+					moduleInfo[lenOfModuleInfo] = {
 						moduleName: "",
 						moduleCredits: 0,
 						moduleGrade: ""
-				};
+					};
+					lenOfModuleInfo += 1;
+					numOfModulesToAdd -= 1;
+				}
 			}
-
 			this.setState({
 				numOfModules: input
 			});
